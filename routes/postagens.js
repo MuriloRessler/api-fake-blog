@@ -113,4 +113,11 @@ router.put('/postagem/:id', async (req, res) => {
     res.json(formatarPostagem(data))
 })
 
+const autenticar = require('../middlewares/auth')
+
+// antes: router.put('/postagem/:id', async (req, res) => { ... })
+router.put('/postagem/:id', autenticar, async (req, res) => {
+    // ... mesmo código de antes
+})
+
 module.exports = router

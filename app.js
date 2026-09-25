@@ -18,3 +18,5 @@ const postagensRoutes = require('./routes/postagens')
 app.use('/', postagensRoutes)
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.use('/', require('./routes/comentarios'))
